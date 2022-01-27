@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { NavigationCancel, NavigationEnd, NavigationError, NavigationStart, Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'raffle-nft-dapp';
+  title = 'WEB 3 SEED';
+  isLoadingRoute = false;
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationStart) {
+        this.isLoadingRoute = true;
+      }
+
+      if (event instanceof NavigationEnd || event instanceof NavigationError || event instanceof NavigationCancel) {
+        this.isLoadingRoute = false;
+      }
+    })
+  }
+
+
 }
