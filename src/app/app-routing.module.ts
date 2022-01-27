@@ -1,8 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { AboutComponent } from './about/about.component';
-import { HomeComponent } from './home/home.component';
+import { CustomPreloadStrategyService } from './services/custom-preload-strategy.service';
 
 const routes: Routes = [{
   path: '',
@@ -10,17 +9,23 @@ const routes: Routes = [{
   pathMatch: 'full'
 }, {
   path: 'landing',
-  component: LandingComponent
+  component: LandingComponent,
 }, {
   path: 'home',
-  loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
+  loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+  data: { shouldPreload: false }
 }, {
   path: 'about',
-  loadChildren: () => import('./about/about.module').then(m => m.AboutModule)
+  loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
+  data: { shouldPreload: false }
 }];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [
+    RouterModule.forRoot(routes, {
+      preloadingStrategy: CustomPreloadStrategyService
+    })
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
