@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
-import { CustomPreloadStrategyService } from './services/custom-preload-strategy.service';
+import { CustomPreloadStrategyService } from './core/services/custom-preload-strategy.service';
 
 const routes: Routes = [{
   path: '',
