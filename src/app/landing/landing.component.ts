@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { InstallablePromptService } from '../core/services/installable-prompt.service';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private instPrompt: InstallablePromptService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  triggerPWAPrompt(): void{
+    console.log("SHOW Z PROMPT!");
+    this.instPrompt.showPrompt();
   }
 
 }
