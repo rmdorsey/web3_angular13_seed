@@ -27,11 +27,12 @@ jobs:
           npm run build --prod
         working-directory: .
 
-      uses: actions/upload-artifact@v2
-      if: failure()
-      with:
-        name: node-app
-        path: .
+      - name: Upload artifact for deployment job
+        uses: actions/upload-artifact@v2
+        if: failure()
+        with:
+          name: node-app
+          path: .
 
   deploy:
     runs-on: ubuntu-latest
