@@ -51,6 +51,5 @@ jobs:
         uses: azure/webapps-deploy@v2
         with:
           app-name: 'Angular13-Seed-Showcase'
-          slot-name: 'Production'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_89B8259007EA4A90AE93A70D42F079EC }}
-          package: .
+          package: ./dist/raffle-nft-dapp
