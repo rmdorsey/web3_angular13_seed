@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
 import { InstallablePromptComponent } from './core/components/installable-prompt/installable-prompt.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { InstallablePromptComponent } from './core/components/installable-prompt
     InstallablePromptComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
@@ -31,7 +32,8 @@ import { InstallablePromptComponent } from './core/components/installable-prompt
     }),
     BrowserAnimationsModule,
     MatDialogModule,
-    MatButtonModule
+    MatButtonModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: [AppComponent]

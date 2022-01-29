@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/raffle-nft-dapp",
+            "outputPath": "dist/raffle-nft-dapp/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -107,6 +107,49 @@
             ],
             "scripts": []
           }
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/raffle-nft-dapp/server",
+            "main": "src/main.server.ts",
+            "tsConfig": "tsconfig.server.json",
+            "inlineStyleLanguage": "scss"
+          },
+          "configurations": {
+            "production": {
+              "outputHashing": "media",
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "raffle-nft-dapp:build:production",
+              "serverTarget": "raffle-nft-dapp:server:production"
+            },
+            "development": {
+              "browserTarget": "raffle-nft-dapp:build:development",
+              "serverTarget": "raffle-nft-dapp:server:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }
