@@ -52,5 +52,5 @@ jobs:
         with:
           app-name: 'Angular13-Seed-Showcase'
           slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_971BB881886B4CFC86FA7933C56DBB7F }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_9E0CCF86DA0A4244BFF428C0A21D6936 }}
           package: .
