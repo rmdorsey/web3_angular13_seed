@@ -30,6 +30,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
+              "src/routes.json",
               "src/web.config"
             ],
             "styles": [
@@ -102,6 +103,7 @@
               "src/favicon.ico",
               "src/assets",
               "src/manifest.webmanifest",
+              "src/routes.json",
               "src/web.config"
             ],
             "styles": [
