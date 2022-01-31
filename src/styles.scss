@@ -12,26 +12,26 @@
 // Define the palettes for your theme using the Material Design palettes available in palette.scss
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
-$raffle-nft-dapp-primary: mat.define-palette(mat.$indigo-palette);
-$raffle-nft-dapp-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$angular-seed-primary: mat.define-palette(mat.$indigo-palette);
+$angular-seed-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
 
 // The warn palette is optional (defaults to red).
-$raffle-nft-dapp-warn: mat.define-palette(mat.$red-palette);
+$angular-seed-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$raffle-nft-dapp-theme: mat.define-light-theme((
+$angular-seed-theme: mat.define-light-theme((
   color: (
-    primary: $raffle-nft-dapp-primary,
-    accent: $raffle-nft-dapp-accent,
-    warn: $raffle-nft-dapp-warn,
+    primary: $angular-seed-primary,
+    accent: $angular-seed-accent,
+    warn: $angular-seed-warn,
   )
 ));
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include mat.all-component-themes($raffle-nft-dapp-theme);
+@include mat.all-component-themes($angular-seed-theme);
 
 /* You can add global styles to this file, and also import other style files */
 

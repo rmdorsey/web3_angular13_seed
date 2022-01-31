@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "raffle-nft-dapp": {
+    "angular-seed": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/raffle-nft-dapp",
+            "outputPath": "dist/angular-seed",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,10 +77,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "raffle-nft-dapp:build:production"
+              "browserTarget": "angular-seed:build:production"
             },
             "development": {
-              "browserTarget": "raffle-nft-dapp:build:development"
+              "browserTarget": "angular-seed:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -88,7 +88,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "raffle-nft-dapp:build"
+            "browserTarget": "angular-seed:build"
           }
         },
         "test": {
@@ -115,7 +115,7 @@
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/raffle-nft-dapp/server",
+            "outputPath": "dist/angular-seed/server",
             "main": "src/main.server.ts",
             "tsConfig": "tsconfig.server.json",
             "inlineStyleLanguage": "scss"
@@ -145,12 +145,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "raffle-nft-dapp:build:production",
-              "serverTarget": "raffle-nft-dapp:server:production"
+              "browserTarget": "angular-seed:build:production",
+              "serverTarget": "angular-seed:server:production"
             },
             "development": {
-              "browserTarget": "raffle-nft-dapp:build:development",
-              "serverTarget": "raffle-nft-dapp:server:development"
+              "browserTarget": "angular-seed:build:development",
+              "serverTarget": "angular-seed:server:development"
             }
           },
           "defaultConfiguration": "production"
@@ -158,5 +158,5 @@
       }
     }
   },
-  "defaultProject": "raffle-nft-dapp"
+  "defaultProject": "angular-seed"
 }
