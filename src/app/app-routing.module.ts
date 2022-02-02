@@ -18,6 +18,10 @@ const routes: Routes = [{
   path: 'about',
   loadChildren: () => import('./about/about.module').then(m => m.AboutModule),
   data: { shouldPreload: false }
+}, {
+  path: 'examples',
+  loadChildren: () => import('./examples/examples.module').then(m => m.ExamplesModule),
+  data: { shouldPreload: false }
 }];
 
 @NgModule({
