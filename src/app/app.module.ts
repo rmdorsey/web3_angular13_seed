@@ -14,6 +14,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { InstallablePromptComponent } from './core/components/installable-prompt/installable-prompt.component';
 import { RouterModule } from '@angular/router';
 
+import { HdWalletAdapterModule } from '@heavy-duty/wallet-adapter';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +35,8 @@ import { RouterModule } from '@angular/router';
     BrowserAnimationsModule,
     MatDialogModule,
     MatButtonModule,
-    RouterModule
+    RouterModule,
+    HdWalletAdapterModule.forRoot({ autoConnect: true })
   ],
   providers: [],
   bootstrap: [AppComponent]
